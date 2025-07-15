@@ -1,0 +1,8 @@
+ollama
+beautifulsoup4
+requests
+sentence-transformers
+openai
+crewai
+dotenv
+streamlit
