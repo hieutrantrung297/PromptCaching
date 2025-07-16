@@ -1,7 +1,7 @@
 # MiAI_PromptCaching
 Demo of building Prompt Caching in GenAI
 
-Video link:  https://youtu.be/_52-kz08LvU
+Video link:  [https://youtu.be/_52-kz08LvU](https://youtu.be/y1SMg5XTouY)
 
 #MìAI <br>
 Fanpage: http://facebook.com/miaiblog<br>
