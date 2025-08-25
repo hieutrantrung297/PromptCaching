@@ -12,9 +12,9 @@ def _unwrap_output(result_obj) -> str:
     """Trích xuất văn bản thuần từ kết quả trả về của Crew."""
     return str(getattr(result_obj, "raw_output", getattr(result_obj, "output", result_obj)))
 
-class BankingAgent:
+class MyAgent:
     def __init__(self):
-        self.model_name = "gpt-4.1-nano"
+        self.model_name = "huggingface/openai/gpt-oss-20b"
         self.temperature_setting = 0.7
         self.api_key = os.getenv("MODEL_API_KEY")
 

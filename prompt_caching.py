@@ -18,7 +18,6 @@ SIM_THRESHOLD = 0.85
 
 # Mô hình sinh embedding
 model_name_emb = "all-MiniLM-L6-v2"
-# model_name_emb = "Alibaba-NLP/gte-multilingual-base"
 embedder = SentenceTransformer(model_name_emb,token=os.getenv("HF_API_KEY"), trust_remote_code=True)
 
 

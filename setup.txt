@@ -6,3 +6,4 @@ openai
 crewai
 dotenv
 streamlit
+pyngrok

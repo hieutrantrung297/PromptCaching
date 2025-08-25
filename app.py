@@ -1,5 +1,5 @@
 import streamlit as st
-from banking_agent import BankingAgent
+from my_agent import MyAgent
 from datetime import datetime
 import json
 import pandas as pd
@@ -7,14 +7,14 @@ from prompt_caching import purge_cache
 
 # Cấu hình trang Streamlit
 st.set_page_config(
-    page_title="Kiến thức Ngân Hàng Cơ Bản",
+    page_title="Kiến thức Cơ Bản",
     page_icon="📚",
     layout="wide"
 )
 
 # Khởi tạo trạng thái phiên cho dữ liệu
 if 'agent' not in st.session_state:
-    st.session_state.agent = BankingAgent()
+    st.session_state.agent = MyAgent()
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
@@ -27,7 +27,7 @@ def format_timestamp(timestamp: str) -> str:
 def main():
     # Thanh bên
     with st.sidebar:
-        st.title("📚 Kiến thức Ngân Hàng Cơ Bản")
+        st.title("📚 Kiến thức Cơ Bản")
         st.markdown("Hỏi bất kỳ câu gì và nhận câu trả lời đơn giản, dễ hiểu!")
 
         # Các nút điều khiển
