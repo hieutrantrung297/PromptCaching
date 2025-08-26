@@ -41,6 +41,8 @@ PromptCaching lets users ask banking-related questions and get simple, clear ans
      ```
      MONGODB_CONNECTION_STRING=your_mongodb_atlas_connection_string
      HF_API_KEY=your_huggingface_api_key
+     MODEL_API_KEY=your_huggingface_api_key
+     NGROK_AUTH_TOKEN=your_ngrok_auth_token
      ```
 
 ## Usage
