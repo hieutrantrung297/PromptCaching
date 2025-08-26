@@ -1,1 +1,29 @@
+# Python
+__pycache__/
+cache/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Jupyter/Colab
+.ipynb_checkpoints/
+*.ipynb
+
+# Streamlit
+.streamlit/
+
+# Environment/config
 .env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache/data

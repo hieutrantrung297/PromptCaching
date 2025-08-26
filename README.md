@@ -1,39 +1,67 @@
-# PromptCaching: Simple Banking Knowledge Q&A with Caching
+# PromptCaching
 
-This project is a Streamlit web app that answers banking-related questions in simple, easy-to-understand language. It uses LLMs via [CrewAI](https://github.com/joaomdmoura/crewAI) and caches responses for faster future retrieval, including semantic similarity search.
+A Streamlit web app for banking Q&A with intelligent caching using MongoDB and semantic search.
+
+## Overview
+
+PromptCaching lets users ask banking-related questions and get simple, clear answers powered by LLMs. The app caches responses in MongoDB for fast retrieval, including semantic similarity matching using sentence embeddings.
 
 ## Features
 
-- Ask any banking question and get a friendly, clear answer.
-- Responses are cached for instant retrieval if a similar question is asked again.
-- Semantic search: similar questions are matched using sentence embeddings.
-- Cache can be purged from the sidebar.
-- Chat history is shown in the app.
+- Ask any banking question and receive a friendly, easy-to-understand answer.
+- Caching with MongoDB: instant retrieval for repeated or similar questions.
+- Semantic search: matches similar questions using embeddings.
+- Option to purge cache and clear chat history from the sidebar.
+- Chat history display.
 
 ## Project Structure
 
-- [`app.py`](app.py): Streamlit web app UI and logic.
-- [`my_agent.py`](my_agent.py): Defines the LLM agent and handles answering questions with caching.
-- [`prompt_caching.py`](prompt_caching.py): Implements caching, semantic search, and cache management.
-- [`setup.txt`](setup.txt): Python dependencies.
-- `PromptCaching.pdf`: Documentation (not parsed here).
-- `run.ipynb`: Colab notebook for running the app with ngrok tunneling.
+- `app.py`: Streamlit web app UI and main logic.
+- `my_agent.py`: Defines the LLM agent and handles Q&A with caching.
+- `prompt_caching.py`: Implements MongoDB caching and semantic search.
+- `setup.txt`: Python dependencies.
+- `run.ipynb`: Colab notebook for remote app access.
+- `PromptCaching.pdf`: Documentation.
 
-## Run
-- Use the provided Colab notebook ([run.ipynb](run.ipynb)) for remote access.
+## Setup
+
+1. **Install dependencies**
+   ```sh
+   pip install -r setup.txt
+   ```
+
+2. **MongoDB Atlas (recommended for Colab)**
+   - Create a free cluster at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+   - Whitelist your IP (`0.0.0.0/0` for testing).
+   - Create a database user.
+   - Copy your connection string.
+
+3. **Environment variables**
+   - Create a `.env` file:
+     ```
+     MONGODB_CONNECTION_STRING=your_mongodb_atlas_connection_string
+     HF_API_KEY=your_huggingface_api_key
+     ```
 
 ## Usage
 
-- Enter your banking question in the app.
-- The agent will answer using the LLM.
-- If your question (or a similar one) was asked before, the cached answer is returned instantly.
-- Use the sidebar to clear chat history or purge the cache.
+- Run the app locally:
+  ```sh
+  streamlit run app.py
+  ```
+- Or use `run.ipynb` in Google Colab for remote access.
 
 ## Caching Details
 
-- Caches responses in `./cache/data_store` as JSON files.
-- Uses sentence-transformers for semantic similarity (threshold: 0.85).
-- Stores prompt, response, embedding, timestamp, and metadata.
+- Responses are stored in MongoDB (`prompt_cache_db.cache_entries`).
+- Semantic similarity uses sentence-transformers (threshold: 0.85).
+- Each cache entry includes: prompt, response, embedding, timestamp, and metadata.
 
-**Authors:**  
+## Authors
+
 Trung Hiếu
+
+---
+
+**Note:**  
+If running on Colab, you must use MongoDB Atlas (local MongoDB is not supported).

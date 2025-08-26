@@ -7,3 +7,4 @@ crewai
 dotenv
 streamlit
 pyngrok
+pymongo
